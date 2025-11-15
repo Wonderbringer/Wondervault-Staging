@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonderstone Workshop - test 1</title>
+    <title>Wonderstone Workshop</title>
     <meta name="robots" content="noindex">
     <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
@@ -78,7 +78,7 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
         }
 
-        /* --- Mailing List Section (CSS RETAINED FOR FOOTER) --- */
+        /* --- Mailing List Section (STYLING REMOVED FROM BODY HTML) --- */
         .mailing-list {
             position: absolute;
             bottom: 20%; 
@@ -92,8 +92,6 @@
             font-size: 1.1em;
             margin-bottom: 10px;
         }
-        
-        /* RESTORED FUNCTIONAL PLACEHOLDER STYLING */
         .custom-form-container {
             display: flex;
             justify-content: center;
@@ -192,7 +190,7 @@
         /* --- Footer Styling (CSS) --- */
         .site-footer {
             background-color: #000000;
-            color: #A0A0A0;
+            color: #A0A0A0; 
             padding: 40px 20px;
             text-align: center;
             border-top: 1px solid #333;
@@ -203,14 +201,14 @@
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center; /* Center footer blocks */
             align-items: flex-start;
         }
         .footer-block {
             flex-basis: 30%;
             min-width: 250px;
-            margin-bottom: 20px;
-            text-align: left;
+            margin: 0 20px 20px 20px; /* Added margins for spacing */
+            text-align: center; /* Centered all text */
         }
         .footer-block h3 {
             color: #6A5ACD;
@@ -222,13 +220,12 @@
 
         /* Social Icon Styling (Fixed) */
         .social-icons a {
-            color: #F0F0F0;
-            font-size: 1.1em;
-            margin-right: 15px;
+            color: #F0F0F0; 
+            font-size: 1.1em; 
+            margin: 0 10px; /* Center-aligned spacing */
             text-decoration: none;
             transition: color 0.3s;
-            display: block;
-            margin-bottom: 5px;
+            display: inline-block; /* Aligned icons horizontally */
         }
         .social-icons a:hover {
             color: #FFFFFF;
@@ -242,34 +239,6 @@
             font-size: 0.85em;
         }
 
-        /* Newsletter form adjustments for footer */
-        .footer-form-container {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .footer-form-container input {
-            padding: 10px;
-            width: 100%;
-            max-width: 200px; 
-        }
-        .footer-form-container button {
-            padding: 10px 20px;
-        }
-
-        @media (max-width: 767px) {
-            .footer-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .footer-block {
-                text-align: center;
-                flex-basis: 100%;
-            }
-            .footer-form-container {
-                justify-content: center;
-            }
-        }
     </style>
 </head>
 <body>
@@ -347,32 +316,22 @@
 <footer class="site-footer">
     <div class="footer-container">
         
-        <div class="footer-block newsletter-signup">
-            <h3>The Sending Stone Dispatch</h3>
-            <p style="font-size: 0.9em; margin-bottom: 15px;">Get access to new adventures and exclusive content.</p>
-            
-            <div class="footer-form-container">
-                <input type="email" placeholder="Your Email" style="max-width: 150px;">
-                <button type="submit">Send</button>
-            </div>
-            
+        <div class="footer-block" style="text-align: center; flex-basis: 30%;">
+            <h3>Contact</h3>
+            <p style="font-size: 1em;">
+                Email: <a href="mailto:wonderstoneworkshop@gmail.com" style="color: #A08CDA; text-decoration: none;">
+                    wonderstoneworkshop@gmail.com
+                </a>
+            </p>
         </div>
 
-        <div class="footer-block social-links">
+        <div class="footer-block social-links" style="text-align: center; flex-basis: 30%;">
             <h3>Join the Adventure</h3>
             <div class="social-icons">
                 <a href="https://instagram.com/wonderstoneworkshop" target="_blank">Instagram</a>
                 <a href="https://x.com/wonderstonerpg" target="_blank">X (Twitter)</a>
                 <a href="https://www.reddit.com/user/WonderstoneWorkshop/" target="_blank">Reddit</a>
             </div>
-        </div>
-
-        <div class="footer-block legal-links">
-            <h3>Links</h3>
-            <ul style="list-style-type: none; padding: 0;">
-                <li><a href="#" style="color:#F0F0F0; text-decoration:none; line-height:1.8;">Contact Us</a></li>
-                <li><a href="#" style="color:#F0F0F0; text-decoration:none;">Privacy Policy</a></li>
-            </ul>
         </div>
         
         <div class="copyright">
