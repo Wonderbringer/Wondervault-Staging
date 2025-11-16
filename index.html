@@ -148,4 +148,200 @@
             align-items: flex-start;
             gap: 50px;
         }
-        .product-container.reversed { flex-direction: row
+        .product-container.reversed { flex-direction: row-reverse; }
+        .text-content { flex: 2; color: #F0F0F0; line-height: 1.6; }
+        .image-content { flex: 1; text-align: center; }
+        .text-content h2 { font-size: 2.5em; color: #FFFFFF; margin-top: 0; margin-bottom: 5px; letter-spacing: 1px; }
+        .text-content .subtitle { font-size: 1.2em; font-style: italic; color: #B0B0B0; margin-bottom: 25px; }
+        .adventure-list { list-style-type: none; padding: 0; margin: 20px 0; }
+        .adventure-list li { margin-bottom: 15px; }
+        .highlight { color: #A08CDA; }
+        .product-image { width: 100%; max-width: 300px; height: auto; border-radius: 8px; box-shadow: 0 0 20px rgba(106, 90, 205, 0.4); margin-bottom: 40px; }
+        .price { font-size: 1.4em; font-weight: bold; color: #FFFFFF; margin-top: 30px; }
+        .new-release-badge { display: inline-block; background-color: #6A5ACD; color: white; padding: 5px 12px; border-radius: 4px; font-size: 0.8em; font-weight: bold; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; }
+        .coming-soon-badge { display: inline-block; background-color: #FF7F50; color: white; padding: 5px 12px; border-radius: 4px; font-size: 0.8em; font-weight: bold; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; }
+        .buy-button { padding: 15px 40px; border: none; border-radius: 8px; background-color: #6A5ACD; color: white; font-size: 1.2em; font-weight: bold; cursor: pointer; transition: background-color 0.3s, transform 0.1s; width: 100%; max-width: 300px; box-shadow: 0 0 10px rgba(106, 90, 205, 0.6); }
+        .buy-button:hover { background-color: #7B68EE; transform: translateY(-2px); }
+
+
+        /* --- TABLET/MOBILE OPTIMIZATION --- */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .hero-section { background-attachment: scroll !important; background-position: 70% 30%; background-size: 140% auto; }
+            .logo-container img { height: 30px; }
+            .nav-links a { font-size: 0.75rem; margin-left: 10px; }
+            .main-content { top: 45%; }
+            .mailing-list { bottom: 10%; }
+            /* Product Container Alignment Fix for Tablet */
+            .product-container, .product-container.reversed { 
+                align-items: flex-start; 
+                text-align: left; 
+            }
+            .image-content { 
+                text-align: left; 
+            }
+            .text-content {
+                text-align: left;
+            }
+        }
+        @media (max-width: 767px) {
+             .hero-section { background-attachment: scroll !important; background-position: 50% 30%; background-size: 200% auto; }
+             .logo-container img { height: 60px; } 
+            .nav-links a { font-size: 0.65rem; margin-left: 5px; }
+            .main-content h1 { font-size: 2.5em; line-height: 1.1; }
+            .main-content p { font-size: 1.0em; }
+            .main-content { top: 45%; }
+            .mailing-list { bottom: 5%; }
+            /* Product Section Stacking Fix */
+            .product-container, .product-container.reversed { 
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .image-content { 
+                order: -1; 
+                width: 100%;
+                text-align: left; 
+                margin-bottom: 20px;
+            }
+            .text-content { 
+                width: 90%; 
+                text-align: left; 
+                margin: 0 auto;
+            }
+            .text-content h2, .text-content .subtitle, .new-release-badge, .coming-soon-badge { 
+                text-align: left; 
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .text-content h2 { font-size: 2em; }
+        }
+
+        /* --- Footer Styling --- */
+        .site-footer {
+            background-color: #000000;
+            color: #A0A0A0; 
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+        .footer-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            align-items: flex-start;
+        }
+        .footer-block {
+            flex-basis: 30%;
+            min-width: 250px;
+            margin: 0 20px 20px 20px; 
+            text-align: center; 
+        }
+        .footer-block h3 {
+            color: #6A5ACD;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Social Icon Styling (Fixed) */
+        .social-icons a {
+            color: #F0F0F0; 
+            font-size: 1.1em; 
+            margin: 0 10px; 
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block; 
+        }
+        .social-icons a:hover {
+            color: #FFFFFF;
+        }
+        .copyright {
+            flex-basis: 100%;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #333;
+            text-align: center;
+            font-size: 0.85em;
+        }
+
+        /* Newsletter form adjustments for footer (CSS only, HTML removed) */
+        .footer-form-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .footer-form-container input {
+            padding: 10px;
+            width: 100%;
+            max-width: 200px; 
+        }
+        .footer-form-container button {
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 767px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-block {
+                text-align: center;
+                flex-basis: 100%;
+            }
+            .footer-form-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-section">
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="WONDERSTONE_LOGO.png" alt="Wonderstone Workshop Logo">
+        </div>
+        <div class="nav-links">
+            </div>
+    </div>
+
+    <div class="main-content">
+        <h1>WONDERSTONE WORKSHOP</h1>
+        <p>Magical TTRPG Creations</p>
+    </div>
+
+    </div> 
+<div class="new-section">
+    <div class="product-container">
+        <div class="text-content">
+            <div class="new-release-badge">NEW RELEASE</div>
+            
+            <h2>Baldur's Gate: Upper City Intrigue</h2>
+            <p class="subtitle">Five Short, Sharp Adventures from Beyond the Old Wall.</p>
+            
+            <p>For use with the 2024 revision of the Dungeons & Dragons fifth edition core rules</p>
+            <p>Easy-to-prepare adventures, set against the ideal backdrop for schemes and deceit:</p>
+            
+            <ul class="adventure-list">
+                <li><strong class="highlight">"Joust of the Oathbreaker"</strong> (level 3) Compete in a jousting tournament on the Wide against a wicked orc knight riding a giant lizard.</li>
+                <li><strong class="highlight">"Masque Macabre"</strong> (level 4) Infiltrate a decadent masquerade hosted by a predatory patriar with scheming guests who share a dark fixation.</li>
+                <li><strong class="highlight">"The Wonderstone Job"</strong> (level 5) Pull off a heist under the Hall of Wonders in a vault full of mechanical traps and clockwork monsters.</li>
+                <li><strong class="highlight">"Tower of Chaos"</strong> (level 6) Tame a tumultuous storm of wild magic that has engulfed Ramazith's Tower and uncover its alien origin.</li>
+                <li><strong class="highlight">"High Stakes"</strong> (level 7) Play politics in High Hall among reptilian spies and parliamentary mummies as you elect the next duke to the Council of Four.</li>
+            </ul>
+            
+            <p class="price">Price: $4.95</p>
+            <p class="more-info">More info available at the <a href="https://www.dmsguild.com/en/product/544478/baldur-s-gate-upper-city-intrigue?src=hottest_filtered" target="_blank">Dungeon Master's Guild</a></p>
+        </div>
+        
+        <div class="image-content">
+            <img src="BALDURS_GATE_UPPER_CITY_INTRIGUE.png" alt="Baldur's Gate Product Cover" class="product-image">
+            <a href="https://www.dmsguild.com/en/product/544478/baldur-s-gate-upper-city-intrigue?src=hottest_filtered" target="_blank" class="buy-button">Buy Here</a>
+        </div>
+    </div>
+
+    <div class="product-container reversed">
+        <div class="text-content">
