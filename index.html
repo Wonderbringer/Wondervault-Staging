@@ -78,7 +78,7 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
         }
 
-        /* --- Mailing List Section (STYLING REMOVED FROM BODY HTML) --- */
+        /* --- Mailing List Section (STYLING RETAINED) --- */
         .mailing-list {
             position: absolute;
             bottom: 20%; 
@@ -92,6 +92,8 @@
             font-size: 1.1em;
             margin-bottom: 10px;
         }
+        
+        /* RESTORED FUNCTIONAL PLACEHOLDER STYLING */
         .custom-form-container {
             display: flex;
             justify-content: center;
@@ -180,17 +182,19 @@
             .main-content p { font-size: 1.0em; }
             .main-content { top: 45%; }
             .mailing-list { bottom: 5%; }
+            /* Product Section Stacking Fix */
             .product-container, .product-container.reversed { flex-direction: column; align-items: center; }
             .image-content { order: -1; }
             .text-content { width: 90%; text-align: left; }
-            .text-content h2, .text-content .subtitle, .new-release-badge, .coming-soon-badge { text-align: center; margin-left: auto; margin-right: auto; }
+            .text-content h2 { font-size: 2em; /* 🛑 TARGET FIX: Smaller Title on Mobile */ }
+            .text-content .subtitle, .new-release-badge, .coming-soon-badge { text-align: center; margin-left: auto; margin-right: auto; }
             .text-content h2 { font-size: 2em; }
         }
 
-        /* --- Footer Styling (CSS) --- */
+        /* --- Footer Styling --- */
         .site-footer {
             background-color: #000000;
-            color: #A0A0A0; 
+            color: #A0A0A0; /* Soft gray for general text */
             padding: 40px 20px;
             text-align: center;
             border-top: 1px solid #333;
@@ -211,7 +215,7 @@
             text-align: center; /* Centered all text */
         }
         .footer-block h3 {
-            color: #6A5ACD;
+            color: #6A5ACD; /* Purple color for headers */
             font-size: 1.1em;
             margin-top: 0;
             margin-bottom: 15px;
@@ -220,8 +224,8 @@
 
         /* Social Icon Styling (Fixed) */
         .social-icons a {
-            color: #F0F0F0; 
-            font-size: 1.1em; 
+            color: #F0F0F0; /* Brighter color */
+            font-size: 1.1em; /* Reduced size */
             margin: 0 10px; /* Center-aligned spacing */
             text-decoration: none;
             transition: color 0.3s;
@@ -239,6 +243,34 @@
             font-size: 0.85em;
         }
 
+        /* Newsletter form adjustments for footer (using existing styling) */
+        .footer-form-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .footer-form-container input {
+            padding: 10px;
+            width: 100%;
+            max-width: 200px; 
+        }
+        .footer-form-container button {
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 767px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-block {
+                text-align: center;
+                flex-basis: 100%;
+            }
+            .footer-form-container {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -333,6 +365,9 @@
                 <a href="https://www.reddit.com/user/WonderstoneWorkshop/" target="_blank">Reddit</a>
             </div>
         </div>
+
+        <div class="footer-block" style="flex-basis: 30%;">
+            </div>
         
         <div class="copyright">
             © 2025 Wonderstone Workshop. All Rights Reserved.
