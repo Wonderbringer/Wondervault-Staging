@@ -78,7 +78,7 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
         }
 
-        /* --- Mailing List Section (STYLING RETAINED) --- */
+        /* --- Mailing List Section (STYLING REMOVED FROM BODY HTML) --- */
         .mailing-list {
             position: absolute;
             bottom: 20%; 
@@ -92,8 +92,6 @@
             font-size: 1.1em;
             margin-bottom: 10px;
         }
-        
-        /* RESTORED FUNCTIONAL PLACEHOLDER STYLING */
         .custom-form-container {
             display: flex;
             justify-content: center;
@@ -171,17 +169,8 @@
             .nav-links a { font-size: 0.75rem; margin-left: 10px; }
             .main-content { top: 45%; }
             .mailing-list { bottom: 10%; }
-            /* Product Container Alignment Fix for Tablet */
-            .product-container, .product-container.reversed { 
-                align-items: flex-start; 
-                text-align: left; 
-            }
-            .image-content { 
-                text-align: left; 
-            }
-            .text-content {
-                text-align: left;
-            }
+            .product-container, .product-container.reversed { flex-direction: column; align-items: center; text-align: center; }
+            .text-content, .image-content { flex: auto; width: 100%; }
         }
         @media (max-width: 767px) {
              .hero-section { background-attachment: scroll !important; background-position: 50% 30%; background-size: 200% auto; }
@@ -191,31 +180,14 @@
             .main-content p { font-size: 1.0em; }
             .main-content { top: 45%; }
             .mailing-list { bottom: 5%; }
-            /* Product Section Stacking Fix */
-            .product-container, .product-container.reversed { 
-                flex-direction: column; 
-                align-items: flex-start; 
-            }
-            .image-content { 
-                order: -1; 
-                width: 100%;
-                text-align: left; 
-                margin-bottom: 20px;
-            }
-            .text-content { 
-                width: 90%; 
-                text-align: left; 
-                margin: 0 auto;
-            }
-            .text-content h2, .text-content .subtitle, .new-release-badge, .coming-soon-badge { 
-                text-align: left; 
-                margin-left: 0;
-                margin-right: 0;
-            }
+            .product-container, .product-container.reversed { flex-direction: column; align-items: center; }
+            .image-content { order: -1; }
+            .text-content { width: 90%; text-align: left; }
+            .text-content h2, .text-content .subtitle, .new-release-badge, .coming-soon-badge { text-align: center; margin-left: auto; margin-right: auto; }
             .text-content h2 { font-size: 2em; }
         }
 
-        /* --- Footer Styling --- */
+        /* --- Footer Styling (CSS) --- */
         .site-footer {
             background-color: #000000;
             color: #A0A0A0; 
@@ -229,14 +201,14 @@
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; 
+            justify-content: center; /* Center footer blocks */
             align-items: flex-start;
         }
         .footer-block {
             flex-basis: 30%;
             min-width: 250px;
-            margin: 0 20px 20px 20px; 
-            text-align: center; 
+            margin: 0 20px 20px 20px; /* Added margins for spacing */
+            text-align: center; /* Centered all text */
         }
         .footer-block h3 {
             color: #6A5ACD;
@@ -250,10 +222,10 @@
         .social-icons a {
             color: #F0F0F0; 
             font-size: 1.1em; 
-            margin: 0 10px; 
+            margin: 0 10px; /* Center-aligned spacing */
             text-decoration: none;
             transition: color 0.3s;
-            display: inline-block; 
+            display: inline-block; /* Aligned icons horizontally */
         }
         .social-icons a:hover {
             color: #FFFFFF;
@@ -267,34 +239,6 @@
             font-size: 0.85em;
         }
 
-        /* Newsletter form adjustments for footer (CSS only, HTML removed) */
-        .footer-form-container {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .footer-form-container input {
-            padding: 10px;
-            width: 100%;
-            max-width: 200px; 
-        }
-        .footer-form-container button {
-            padding: 10px 20px;
-        }
-
-        @media (max-width: 767px) {
-            .footer-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .footer-block {
-                text-align: center;
-                flex-basis: 100%;
-            }
-            .footer-form-container {
-                justify-content: center;
-            }
-        }
     </style>
 </head>
 <body>
@@ -345,3 +289,55 @@
 
     <div class="product-container reversed">
         <div class="text-content">
+            <div class="coming-soon-badge">COMING SOON</div>
+            
+            <h2>Ballad of the Uniborn</h2>
+            <p class="subtitle">The Hornbook for Uniborn Species, Lore, and Quest</p>
+            
+            <p>A complete guide to introducing whimsy and vibrant magic into your campaign:</p>
+            
+            <ul class="adventure-list">
+                <li><strong class="highlight">Uniborn Species:</strong> Dive deep into the Angelic Uniborn and the whimsical Faerie Uniborn, including unique abilities like the multi-target Rainbow Blast healing.</li>
+                <li><strong class="highlight">A Menagerie of Foes:</strong> Encounter challenging and thematic new threats with brand-new Uniborn Monster Stat Blocks.</li>
+                <li><strong class="highlight">Roll for Your Name:</strong> Includes a detailed name generator with examples like Glitterhorn or Starlight Cream.</li>
+                <li><strong class="highlight">Quests of Whimsy and Wonder:</strong> Short adventures designed for a party with one or more Uniborn characters, complete with original maps.</li>
+            </ul>
+            
+            <p class="price">Price: $4.95</p>
+            <p class="more-info"><strong class="highlight">Release date coming soon!</strong></p>
+            
+            </div>
+        
+        <div class="image-content">
+            <img src="BALLAD_OF_THE_UNIBORN.png" alt="Ballad of the Uniborn Cover" class="product-image">
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="footer-container">
+        
+        <div class="footer-block" style="text-align: center; flex-basis: 30%;">
+            <h3>Contact</h3>
+            <p style="font-size: 1em;">
+                Email: <a href="mailto:wonderstoneworkshop@gmail.com" style="color: #A08CDA; text-decoration: none;">
+                    wonderstoneworkshop@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <div class="footer-block social-links" style="text-align: center; flex-basis: 30%;">
+            <h3>Join the Adventure</h3>
+            <div class="social-icons">
+                <a href="https://instagram.com/wonderstoneworkshop" target="_blank">Instagram</a>
+                <a href="https://x.com/wonderstonerpg" target="_blank">X (Twitter)</a>
+                <a href="https://www.reddit.com/user/WonderstoneWorkshop/" target="_blank">Reddit</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2025 Wonderstone Workshop. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+</body>
+</html>
