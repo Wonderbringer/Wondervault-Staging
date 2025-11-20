@@ -78,7 +78,7 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
         }
 
-        /* --- Mailing List Section (STYLING REMOVED FROM BODY HTML) --- */
+        /* --- Mailing List Section (STYLING RETAINED) --- */
         .mailing-list {
             position: absolute;
             bottom: 20%; 
@@ -92,6 +92,8 @@
             font-size: 1.1em;
             margin-bottom: 10px;
         }
+        
+        /* RESTORED FUNCTIONAL PLACEHOLDER STYLING */
         .custom-form-container {
             display: flex;
             justify-content: center;
@@ -169,8 +171,9 @@
             .nav-links a { font-size: 0.75rem; margin-left: 10px; }
             .main-content { top: 45%; }
             .mailing-list { bottom: 10%; }
-            .product-container, .product-container.reversed { flex-direction: column; align-items: center; text-align: center; }
-            .text-content, .image-content { flex: auto; width: 100%; }
+            .product-container, .product-container.reversed { flex-direction: row; align-items: flex-start; text-align: left; }
+            .image-content { text-align: left; }
+            .text-content { text-align: left; }
         }
         @media (max-width: 767px) {
              .hero-section { background-attachment: scroll !important; background-position: 50% 30%; background-size: 200% auto; }
@@ -180,10 +183,27 @@
             .main-content p { font-size: 1.0em; }
             .main-content { top: 45%; }
             .mailing-list { bottom: 5%; }
-            .product-container, .product-container.reversed { flex-direction: column; align-items: center; }
-            .image-content { order: -1; }
-            .text-content { width: 90%; text-align: left; }
-            .text-content h2, .text-content .subtitle, .new-release-badge, .coming-soon-badge { text-align: center; margin-left: auto; margin-right: auto; }
+            /* Product Section Stacking Fix */
+            .product-container, .product-container.reversed { 
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+            .image-content { 
+                order: -1; 
+                width: 100%;
+                text-align: left; 
+                margin-bottom: 20px;
+            }
+            .text-content { 
+                width: 90%; 
+                text-align: left; 
+                margin: 0 auto;
+            }
+            .text-content h2, .text-content .subtitle, .new-release-badge, .coming-soon-badge { 
+                text-align: left; 
+                margin-left: 0;
+                margin-right: 0;
+            }
             .text-content h2 { font-size: 2em; }
         }
 
@@ -201,14 +221,14 @@
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Center footer blocks */
+            justify-content: center; 
             align-items: flex-start;
         }
         .footer-block {
             flex-basis: 30%;
             min-width: 250px;
-            margin: 0 20px 20px 20px; /* Added margins for spacing */
-            text-align: center; /* Centered all text */
+            margin: 0 20px 20px 20px; 
+            text-align: center; 
         }
         .footer-block h3 {
             color: #6A5ACD;
@@ -222,10 +242,11 @@
         .social-icons a {
             color: #F0F0F0; 
             font-size: 1.1em; 
-            margin: 0 10px; /* Center-aligned spacing */
+            margin: 0 10px; 
             text-decoration: none;
             transition: color 0.3s;
-            display: inline-block; /* Aligned icons horizontally */
+            display: block; /* Forces vertical stacking */
+            margin-bottom: 5px;
         }
         .social-icons a:hover {
             color: #FFFFFF;
@@ -238,7 +259,6 @@
             text-align: center;
             font-size: 0.85em;
         }
-
     </style>
 </head>
 <body>
@@ -260,6 +280,23 @@
     </div> 
 <div class="new-section">
     <div class="product-container">
+        <div class="image-content">
+            <div class="coming-soon-badge">Coming NOV 25</div>
+            <img src="WIZARD-APOCALYPSE.jpg" alt="Wizard Apocalypse Cover" class="product-image">
+            <a href="#" target="_blank" class="buy-button">Download Free</a>
+        </div>
+        
+        <div class="text-content">
+            <h2>Wizard Apocalypse</h2>
+            <p class="subtitle">Abraca-doomsday!</p>
+            
+            <p>The end is near! Our divination spells foretell the Wizard Apocalypse on Tuesday 11/25.</p>
+            <p>It comes in the form of a **free, one-page RPG** you can learn in 5 minutes. The perfect pocket RPG to stick in your robes as you roam the spell-torn wasteland.</p>
+        </div>
+    </div>
+</div>
+<div class="new-section">
+    <div class="product-container reversed">
         <div class="text-content">
             <div class="new-release-badge">NEW RELEASE</div>
             
@@ -286,8 +323,9 @@
             <a href="https://www.dmsguild.com/en/product/544478/baldur-s-gate-upper-city-intrigue?src=hottest_filtered" target="_blank" class="buy-button">Buy Here</a>
         </div>
     </div>
-
-    <div class="product-container reversed">
+</div>
+<div class="new-section">
+    <div class="product-container">
         <div class="text-content">
             <div class="coming-soon-badge">COMING SOON</div>
             
@@ -333,6 +371,9 @@
                 <a href="https://www.reddit.com/user/WonderstoneWorkshop/" target="_blank">Reddit</a>
             </div>
         </div>
+
+        <div class="footer-block" style="flex-basis: 30%;">
+            </div>
         
         <div class="copyright">
             © 2025 Wonderstone Workshop. All Rights Reserved.
